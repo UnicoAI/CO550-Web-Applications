@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Marius Boncica Razor Pages Currency Converter</a>.</p>
+</div>
+
+<div class="container">
+    <h2>Enter Your Name</h2>
+    <div asp-validation-summary="All"></div>
+    <form method="POST" class="container-sm">
+        <div class="form-control">
+            <label for="Name">Name:</label>
+            <input asp-for="Name" id="Name" />
+        </div>
+        <div class="form-control">
+            <label for="FromCurrency">Currency Value:</label>
+            <input asp-for="Amount" id="Amount" />
+        </div>
+        <div class="form-control">
+            <label for="FromCurrency">Choose Currency:</label>
+            <select asp-for="FromCurrency" id="FromCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+              
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="ToCurrency">Choose Currency:</label>
+            <select asp-for="ToCurrency" id="ToCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+           
+            </select>
+        </div>
+        <button type="submit" class="btn-primary">Submit</button>
+    </form>
+    <div class="justify-content-md-between">
+        <div id="result">
+            <h2>Hello @Model.Name</h2>
+            <h2>Your Currency Conversion result is: @Model.Result</h2>
+            <h3>Conversion executed at this time:  @DateTime.Now</h3>
+        </div>
+    </div>
+</div>
